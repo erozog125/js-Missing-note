@@ -17,34 +17,45 @@ btnCalculate.addEventListener('click',calculateNote);
 const regex = new RegExp("^[1-5]{1}$");
 
 //Validar el input
-input1.addEventListener('keyup',validateNumbers);
-input2.addEventListener('keyup',validateNumbers);
-input3.addEventListener('keyup',validateNumbers);
+// input1.addEventListener('keyup',validateNumbers);
+// input2.addEventListener('keyup',validateNumbers);
+// input3.addEventListener('keyup',validateNumbers);
 
 //Calcular Nota final
 btnCalculate.addEventListener('click', calculateNote);
-
-function validateNumbers() {
-    //Validar regex para los inputs
-    if (!(regex.test(input1.value) && regex.test(input2.value) && regex.test(input3.value))) {
-      finalNote.textContent = "Ingresa un valor numérico entre 1 y 5"
-      finalNote.style.color = 'red';
-      finalNote.style.fontSize = '1rem';
-    } 
-    calculateMissingFinalNote();
-  }
 
 function calculateNote() {
   let note1 = parseFloat(input1.value);
   let note2 = parseFloat(input2.value);
   let note3 = parseFloat(input3.value);
   let final = (note1 * 0.30) + (note2 * 0.30) + (note3 * 0.40);
-  finalNote.textContent = final;
-  return final;
+  finalNote.textContent = final.toFixed(2);
+
+  retrieveNote.textContent = "Si deseas recuperar, necesitas: "+secondChance();
+  winNote.textContent = "Para ganar necesitarías mínimo: " + toWinNote();
+  excellentNote.textContent = "Para ganar con honores necesitarías mínimo: " + noteWithHonors();
+  return "Su nota en este momento es: "+final.toFixed(2);
 }
 
-function calculateMissingFinalNote() {
-  let final = calculateNote();
-  console.log(final);
+function secondChance() {
+  let note1 = parseFloat(input1.value);
+  let note2 = parseFloat(input2.value);
+  let pendingNote = 2.5 - ((note1 * 0.30)+(note2 * 0.30));  
+  return (pendingNote / 0.40).toFixed(2);
 }
+
+function toWinNote() {
+  let note1 = parseFloat(input1.value);
+  let note2 = parseFloat(input2.value);
+  let pendingNote = 3.5 - ((note1 * 0.30)+(note2 * 0.30));  
+  return (pendingNote / 0.40).toFixed(2);
+}
+
+function noteWithHonors() {
+  let note1 = parseFloat(input1.value);
+  let note2 = parseFloat(input2.value);
+  let pendingNote = 4.5 - ((note1 * 0.30)+(note2 * 0.30));  
+  return (pendingNote / 0.40).toFixed(2);
+}
+
 
