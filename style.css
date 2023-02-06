@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #121425;
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 2rem;
+  font-size: 5rem;
+  text-shadow: 0 0 10px #042e95;
+  color: #b53709;
+}
+
+hr {
+  width: 50%;
+  margin: 0.5rem;
+}
+
+.container {
+  width: 35rem;
+  height: 20rem;
+  border: groove 5px gray;
+  border-radius: 15px;
+  margin: 2rem;
+}
+
+.into-notes {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.txt-notes {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.txt-notes input {
+  width: 4rem;
+  height: 1rem;
+  border-radius: 10rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 1rem;
+  border: solid #461301 4px;
+  background-color: #30376f;
+  color: #974006;
+  font-weight: 900;
+}
+
+.p-msj {
+  width: 100%;
+  text-align: center;
+  margin: 2rem;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.results {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.results p {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.buttons {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons > #btn-calculate {
+  width: 8rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.buttons > #btn-calculate:hover,
+.buttons > #btn-calculate:focus {
+  background-color: #121425;
+  color: #ed7009;
+  box-shadow: 0 0 5px #ffff;
+}
